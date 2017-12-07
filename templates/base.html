@@ -8,9 +8,9 @@
     <title>{{title}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Philosopher|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href= {% static "css/styles_basic.css" %}>
     <link rel="stylesheet" href= {% static "css/mainpage.css" %}>
+    <link rel="stylesheet" href= {% static "css/style_fonts.css" %}>
 </head>
 <body>
     <header class="d-flex" style="background-image:url(
@@ -52,15 +52,16 @@
       <div class="card border-0 bg-transparent">
         <div class="card-body">
           <p class="card-text">&copy; {{year}}</p>
-          <p class="card-text">
-              <object type="image/svg+xml" data="{% static "images/logo/logo.svg" %}" class="logo"> here is the logo</object>
+          <p class="card-text icon-logo" style="color:rgba(0, 0, 0, 0.64); font-size:2rem">
+
           </p>
         </div>
       </div>
       <div class="card border-0 bg-transparent">
         <div class="card-body">
-             <a class='card-link social-link' href="https://www.facebook.com/groups/golosaafriki"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-             <a class='card-link social-link' href="https://vk.com/voicesofafrica"> <i class="fa fa-vk" aria-hidden="true"></i></a>
+             <a class='card-link social-link' href="https://www.facebook.com/groups/golosaafriki"> <i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+             <a class='card-link social-link' href="https://vk.com/voicesofafrica"> <i class="fab fa-vk" aria-hidden="true"></i></a>
+             <a class='card-link social-link' href="https://vk.com/voicesofafrica"> <i class="fab fa-telegram-plane" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -73,6 +74,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
     <script src= {% static "js/script.js" %}></script>
 </body>
 </html>
