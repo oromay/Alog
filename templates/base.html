@@ -15,7 +15,7 @@
 <body>
     <header class="d-flex" style="background-image:url(
     {% block background %}
-    {% static "back.jpg" %}
+    {% static "images/backgrounds/borana_backs.jpg" %}
     {% endblock %});">
         <div class="container text-center align-self-center">
                     <h1 class="display-4 branding">Голоса Африки</h1>
@@ -41,8 +41,9 @@
 
 {% endblock %}
 </div>
-<div class="container-fluid main_footer">
-    <div class="card-deck d-flex flex-column-reverse flex-sm-row">
+<div class="container-fluid px-0 main_footer" style="background-image:url({% static 'images/backgrounds/afar_view.jpg' %})">
+
+    <div id="footer" class="card-deck d-flex flex-column-reverse flex-sm-row">
       <div class="card border-0 bg-transparent">
         <div class="card-body">
           <p class="card-text">Terms of use</p>
@@ -51,6 +52,9 @@
       <div class="card border-0 bg-transparent">
         <div class="card-body">
           <p class="card-text">&copy; {{year}}</p>
+          <p class="card-text">
+              <object type="image/svg+xml" data="{% static "images/logo/logo.svg" %}" class="logo"> here is the logo</object>
+          </p>
         </div>
       </div>
       <div class="card border-0 bg-transparent">
@@ -60,6 +64,7 @@
         </div>
       </div>
     </div>
+
 </div>
 
 <!-- end footer -->

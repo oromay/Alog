@@ -83,9 +83,23 @@ div.activated_link {
     padding-bottom: 50px;
 }
 
-
+/*Footer*/
+.social-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-link:hover {
+    color: rgba(190, 190, 190, 0.75);
+}
+#footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.75);
+}
 .main_footer {
-    background-color: rgb(180, 180, 180);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: black;
@@ -93,4 +107,8 @@ div.activated_link {
     /* NOT WORKING YET, to keep footer at the bottomm but it could overlap the content
     position: fixed;
     bottom: 0;*/
+}
+.logo {
+    height: 30px;
+    color: rgba(255, 255, 255, 0.75);
 }
