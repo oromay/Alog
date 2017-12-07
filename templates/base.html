@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Philosopher|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href= {% static "css/styles_basic.css" %}>
+    <link rel="stylesheet" href= {% static "css/mainpage.css" %}>
+</head>
+<body>
+    <header class="d-flex" style="background-image:url(
+    {% block background %}
+    {% static "back.jpg" %}
+    {% endblock %});">
+        <div class="container text-center align-self-center">
+                    <h1 class="display-4 branding">Голоса Африки</h1>
+                    <h1 class="d-sm-block d-none branding subtitle">исследования сообществ по ту сторону Сахары</h1>
+        </div> <!-- div container for branding -->
+    </header>
+<div class="container main_content">
+
+    <div class="w-100 text-right">
+        <a class = 'burger d-sm-none' data-toggle="collapse" href="#collapseMenu" aria-expanded="false" aria-controls="collapseMenu"> ☰ </a>
+    </div>
+
+<div class="collapse " id="collapseMenu">
+    <ul class="nav flex-column flex-sm-row" style="margin-bottom:20px;">
+        <li class="nav-item p2"> <a href="#" class="navigation_link nav-link" style=""><b> Конкурс 2018</b></a> <div class="d-none d-sm-block underline_active"></div></li>
+        <li class="nav-item p2"> <a href="#" class="navigation_link nav-link" style=""><b>Лауреаты</b></a>     <div class="d-none d-sm-block underline_active"></div></li>
+        <li class="nav-item p2"> <a href="#" class="navigation_link nav-link" style=""><b>О проекте</b></a>    <div class="d-none d-sm-block underline_active"></div> </li>
+        <li class="nav-item ml-sm-auto p2"> <a href="#" class="navigation_link nav-link" style=""><b>Связь</b></a>    <div class="d-none d-sm-block underline_active"></div> </li>
+    </ul>
+</div> <!-- div with menu items collapsebalse -->
+
+{% block main_content %}
+
+{% endblock %}
+</div>
+<div class="container-fluid main_footer">
+    <div class="card-deck d-flex flex-column-reverse flex-sm-row">
+      <div class="card border-0 bg-transparent">
+        <div class="card-body">
+          <p class="card-text">Terms of use</p>
+        </div>
+      </div>
+      <div class="card border-0 bg-transparent">
+        <div class="card-body">
+          <p class="card-text">&copy; {{year}}</p>
+        </div>
+      </div>
+      <div class="card border-0 bg-transparent">
+        <div class="card-body">
+             <a class='card-link social-link' href="https://www.facebook.com/groups/golosaafriki"> <i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+             <a class='card-link social-link' href="https://vk.com/voicesofafrica"> <i class="fa fa-vk" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+</div>
+
+<!-- end footer -->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src= {% static "js/script.js" %}></script>
+</body>
+</html>
