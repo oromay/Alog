@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from contentmanager.views import mainpage
+from apply.views import UploadView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', mainpage),
+    url(r'^$', mainpage, name='home'),
+    url(r'^apply/', UploadView.as_view(), name = 'apply'),
 ]

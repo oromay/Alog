@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #my apps (our_news,materials,authors),
+    'apply',
     'contentmanager',
     #third party
     'crispy_forms',
@@ -129,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Europe/Moscow'
+# TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -150,7 +151,7 @@ MEDIA_ROOT = BASE_DIR.child("media_cdn")
 MEDIA_URL = '/media/'
 
 #Third party app settings
-CRISPY_TEMPLATE_PACK = 'bootstrap3'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # INSTALLED_APPS += ('lockdown', )

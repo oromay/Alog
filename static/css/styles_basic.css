@@ -108,6 +108,23 @@ div.activated_link {
     position: fixed;
     bottom: 0;*/
 }
-.logo {
-    height: 30px;
+
+
+
+/*Styling buttons... is not working good! better to change them to smth else.*/
+.btn {
+    border-radius: 0;
 }
+.btn-primary {
+    color: #000000;
+    background-color: rgba(153, 148, 76, 0.1);
+    border-color: rgba(153, 148, 76, 0.5);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn:active {
+    color: #000000;
+    border-color: #000000;
+    background-color: rgba(153, 148, 76, 0.2);!important
+}
+/* End Styling buttons.
