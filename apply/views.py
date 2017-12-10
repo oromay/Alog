@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from ipware.ip import get_real_ip
 from .models import Apply, Attachment
 from .forms import ApplyForm
+from contentmanager.models import Elder
 
 
 def days_left(deadline):
@@ -44,6 +45,7 @@ class UploadView(FormView):
         context['title'] = 'Голоса Африки'
         deadline = datetime.date(2018,3,31)
         context['deadline'] = deadline
+        context['Elders'] = Elder.objects.all()
         context['days_left'] = days_left(deadline)
         context['year'] = datetime.datetime.now().year
 
