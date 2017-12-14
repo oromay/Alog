@@ -22,16 +22,20 @@ class Elder(models.Model):
 class Author(models.Model):
     first_name = models.CharField("Имя", max_length=50)
     second_name = models.CharField("Фамилия", max_length=50)
+    slug = models.SlugField(unique=True)
     bio = models.TextField("Короткая справка",)
     avatar = models.ImageField("Аватар", upload_to='authors/')
     email = models.CharField("Почта", blank=True, max_length=100)
     is_winner = models.BooleanField(default=False)
 
+    def get_absolute_url(self):
+        return reverse("author", kwargs={"slug": self.slug})
+
     def __str__(self):
         return '%s %s' % (self.first_name, self.second_name)
 
 class Post(models.Model):
-    title = models.CharField("Имя", max_length=50)
+    title = models.CharField("Название", max_length=50)
     slug = models.SlugField(unique=True)
     top_image = models.ImageField(upload_to=upload_location)
     content= models.TextField()
@@ -40,11 +44,14 @@ class Post(models.Model):
     update = models.DateTimeField("время создания", auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField("обновлён", auto_now=False, auto_now_add=True)
 
+    def get_absolute_url(self):
+        return reverse("detail", kwargs={"slug": self.slug})
+
     def __str__(self):
         return self.slug
 
 class New(models.Model):
-    title = models.CharField("Имя", max_length=50)
+    title = models.CharField("Название", max_length=50)
     slug = models.SlugField(unique=True)
     top_image = models.ImageField(upload_to=upload_location)
     content= models.TextField()

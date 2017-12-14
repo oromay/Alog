@@ -16,7 +16,13 @@ class PostModelAdmin(admin.ModelAdmin):
         list_filter = ['update']
         search_fields = ['content', 'title']
 
+class AuthorModelAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("second_name",)}
+
+class NewModelAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+
 admin.site.register(Elder)
-admin.site.register(Author)
+admin.site.register(Author, AuthorModelAdmin)
 admin.site.register(Post, PostModelAdmin)
-admin.site.register(New)
+admin.site.register(New, NewModelAdmin)
