@@ -4,7 +4,14 @@
 
 
 <div class="container">
+
+
+
+
+
     <div class='card-columns'>
+
+
         <div class="card text-white">
         <img class="card-img"  src={% static "img-7.jpg" %} alt="Card image cap">
           <div class="card-img-overlay " style="background-color:rgba(0, 0, 0, 0.66)">
@@ -14,6 +21,8 @@
             <p class="card-text text-right"><small class="text-muted"> 28.11.2017 </small></p>
           </div>
         </div>
+
+
         <div class="card">
         <img class="card-img-top"  src={% static "ikom2.jpg" %} alt="Card image cap">
           <div class="card-body ">
@@ -24,6 +33,20 @@
             <p class="card-text text-right"><small class="text-muted"> 22.11.2017 </small></p>
           </div>
         </div>
+
+        {% for piece in news %}
+        <div class="card">
+        <img class="card-img-top"  src={{ piece.top_image.url }} alt="Card image cap">
+          <div class="card-body ">
+            <h4 class="card-title">{{piece.title}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Открывается приём заявок на новый конкурс! Дедлайн - 28 февраля 2018</h6>
+            <p class="card-text">{{piece.content}}</p>
+            <p class="card-text text-right"><small class="text-muted"> {{piece.timestamp}} </small></p>
+          </div>
+        </div>
+
+        {% endfor %}
+
         <div class="card text-white">
         <img class="card-img"  src={% static "img-7.jpg" %} alt="Card image cap">
           <div class="card-img-overlay " style="background-color:rgba(0, 0, 0, 0.66)">

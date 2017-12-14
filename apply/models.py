@@ -1,11 +1,7 @@
 from django.db import models
-from slugify import slugify
-from transliterate import translit
+from contentmanager.utilities import ruslugify
 
 
-
-def ruslugify(smth):
-    return slugify(translit(smth, 'ru', reversed=True))
 
 def upload_location(instance, filename):
     instance = Apply.objects.last()

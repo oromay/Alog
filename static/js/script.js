@@ -8,7 +8,7 @@ $(document).ready(function(){
         $(this).parent().find('div').toggleClass("active_link");
     });
     $(".active").parent().find('div').addClass("activated_link");
-    $("span:contains('Browse')").replaceWith('<span class="hidden-xs">Выбрать...</span>');
+    $("span:contains('Browse')").replaceWith('<span class="d-none d-sm-inline-block">Выбрать...</span>');
     $("i.glyphicon").replaceWith('<i class="far fa-folder-open"></i>');
 
     $(window).resize(function() {
