@@ -1,4 +1,3 @@
-import datetime
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail
@@ -10,21 +9,10 @@ from ipware.ip import get_real_ip
 from .models import Apply, Attachment
 from .forms import ApplyForm
 from contentmanager.models import Elder
+from contentmanager.utilities import days_left
 
 
-def days_left(deadline):
-    today = datetime.date.today()
-    days_left = str(deadline - today).split(' ')[0]
-    if int(days_left[-1])>4 or int(days_left[-1])==0 or 10< int(days_left) <15:
-        word = "дней"
-        verb = 'осталось'
-    elif 1<int(days_left[-1])<5:
-        word = "дня"
-        verb = 'осталось'
-    else:
-        word = "день"
-        verb = 'остался'
-    return (verb + ' ' + days_left + ' ' + word)
+
 
 
 # def applied_view(request):
@@ -43,11 +31,8 @@ class UploadView(FormView):
     def get_context_data(self, ** kwargs):
         context = super(UploadView, self).get_context_data( ** kwargs)
         context['title'] = 'Голоса Африки'
-        deadline = datetime.date(2018,3,31)
-        context['deadline'] = deadline
         context['Elders'] = Elder.objects.all()
-        context['days_left'] = days_left(deadline)
-        context['year'] = datetime.datetime.now().year
+        context['days_left'] = days_left(2018,3,31, True)
 
         return context
 

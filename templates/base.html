@@ -44,7 +44,8 @@
 
 <div class="container-fluid px-0 main_footer" style="background-image:url({% static 'images/backgrounds/afar_view.jpg' %})">
 
-    <div id="footer" class="card-deck d-flex flex-column-reverse flex-sm-row">
+<div id="footer">
+    <div class="card-deck d-flex flex-column-reverse flex-sm-row">
       <div class="card border-0 bg-transparent">
         <div class="card-body">
           <p class="card-text">Terms of use</p>
@@ -52,10 +53,7 @@
       </div>
       <div class="card border-0 bg-transparent">
         <div class="card-body">
-          <p class="card-text">&copy; {{year}}</p>
-          <p class="card-text icon-logo" style="color:rgba(0, 0, 0, 0.64); font-size:2rem">
-
-          </p>
+          <p class="card-text">&copy; 2016-{% now 'Y' %}</p>
         </div>
       </div>
       <div class="card border-0 bg-transparent">
@@ -66,6 +64,11 @@
         </div>
       </div>
     </div>
+    <div class="">
+        <p class="card-text icon-logo" style="color:rgba(0, 0, 0, 0.64); font-size:2rem">
+        </p>
+    </div>
+</div>
 
 </div>
 

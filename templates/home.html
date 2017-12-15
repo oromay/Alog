@@ -4,42 +4,30 @@
 
 
 <div class="container">
-
-
-
-
-
-    <div class='card-columns'>
-
-
-        <div class="card text-white">
-        <img class="card-img"  src={% static "img-7.jpg" %} alt="Card image cap">
-          <div class="card-img-overlay " style="background-color:rgba(0, 0, 0, 0.66)">
-            <h4 class="card-title">Конкурс на лучший проект 2018</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Открывается приём заявок на новый конкурс! Дедлайн - 28 февраля 2018</h6>
-            <p class="card-text">Пройдите по ссылке, чтобы узнать правила конкурса. Прислать свою заявку можно, воспользовавшись формой</p>
-            <p class="card-text text-right"><small class="text-muted"> 28.11.2017 </small></p>
-          </div>
-        </div>
-
-
-        <div class="card">
-        <img class="card-img-top"  src={% static "ikom2.jpg" %} alt="Card image cap">
-          <div class="card-body ">
-            <h4 class="card-title">Экспедиция в Кросс-Ривер, Нигерия</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Реузльтат конкурса 2017 г.</h6>
-            <p class="card-text">В мае 2017 г. жюри конкурса пришло к решению поддержать проект Гали Сим "Полевое исследование идиомов ндое" <a href={% static "docs/GSim.pdf" %}> <i class="far fa-file-alt"></i></a>.
-        </p><p>Экспедиция запланирована на январь-ферваль 2018 г. Отчет об экспедиции будет опубликован на сайте: следите за обновлениями!</p>
-            <p class="card-text text-right"><small class="text-muted"> 22.11.2017 </small></p>
-          </div>
-        </div>
+<div class="card-columns">
+  <div class="card">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title"> 1 Card title that wraps to a new line</h4>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <blockquote class="blockquote mb-0 card-body">
+      <p> 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div>
 
         {% for piece in news %}
         <div class="card">
         <img class="card-img-top"  src={{ piece.top_image.url }} alt="Card image cap">
           <div class="card-body ">
             <h4 class="card-title">{{piece.title}}</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Открывается приём заявок на новый конкурс! Дедлайн - 28 февраля 2018</h6>
             <p class="card-text">{{piece.content}}</p>
             <p class="card-text text-right"><small class="text-muted"> {{piece.timestamp}} </small></p>
           </div>
@@ -47,16 +35,18 @@
 
         {% endfor %}
 
-        <div class="card text-white">
-        <img class="card-img"  src={% static "img-7.jpg" %} alt="Card image cap">
-          <div class="card-img-overlay " style="background-color:rgba(0, 0, 0, 0.66)">
-            <h4 class="card-title">Конкурс на лучший проект 2018</h4>
-            <h6 class="card-subtitle mb-2 text-muted">Открывается приём заявок на новый конкурс! Дедлайн - 28 февраля 2018</h6>
-            <p class="card-text">Пройдите по ссылке, чтобы узнать правила конкурса. Прислать свою заявку можно, воспользовавшись формой</p>
-            <p class="card-text text-right"><small class="text-muted"> 28.11.2017 </small></p>
-          </div>
-        </div>
-    </div>
+        <div class="card p-3 text-right">
+  <blockquote class="blockquote mb-0">
+    <p> 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    <footer class="blockquote-footer">
+      <small class="text-muted">
+        Someone famous in <cite title="Source Title">Source Title</cite>
+      </small>
+    </footer>
+  </blockquote>
+</div>
+
+</div>
 </div>
 
 {% endblock %}

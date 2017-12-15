@@ -1,11 +1,5 @@
-import datetime
-
 from django.shortcuts import render
 from .models import New, Post, Author
-
-now = datetime.datetime.now()
-
-
 
 
 def mainpage(request):
@@ -13,7 +7,6 @@ def mainpage(request):
         'news': New.objects.all(),
         'posts' : Post.objects.all(),
         'title': "главная",
-        'year' : now.year,
     }
     return render(request, "home.html", context)
 
