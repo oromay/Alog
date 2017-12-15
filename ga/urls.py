@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.contrib import admin
-from contentmanager.views import mainpage
+from contentmanager.views import mainpage, laureates
 from django.conf import settings
 from apply.views import UploadView
 
@@ -24,5 +24,7 @@ from apply.views import UploadView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', mainpage, name='home'),
+    url(r'^laureates/', laureates, name='laureates'),
     url(r'^apply/', UploadView.as_view(), name = 'apply'),
+    url(r'^author/(?P<slug>[\w-]+)', UploadView.as_view(), name = 'author'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
