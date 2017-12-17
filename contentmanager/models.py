@@ -1,5 +1,7 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 from .utilities import ruslugify
 
@@ -52,13 +54,19 @@ class Post(models.Model):
     def __str__(self):
         return self.slug
 
+    class Meta:
+        ordering =['-timestamp']
+
 class New(models.Model):
     title = models.CharField("Название", max_length=50)
     slug = models.SlugField(unique=True)
     top_image = models.ImageField(upload_to=upload_location)
-    content= models.TextField()
+    content= RichTextUploadingField()
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
         return self.slug
+
+    class Meta:
+        ordering =['-timestamp']

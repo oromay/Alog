@@ -1,11 +1,17 @@
-
+.social-link {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
 /*Header and cover*/
 header {
     height: 50vh;
-    background: url(../back.jpg) no-repeat center center;
     background-size: cover;
     margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 .branding {
     color: rgba(255, 255, 255, 0.85);
     text-shadow: 1px 2px 8px black;
@@ -36,7 +42,6 @@ div.activated_link {
 
 /* btn to toggle the menu on moblie screens*/
 .burger{
-    float: right;
     color: rgb(75, 75, 75);
     font-size: 2.5rem;
     font-family: monospace;
@@ -78,9 +83,23 @@ div.activated_link {
     padding-bottom: 50px;
 }
 
-
+/*Footer*/
+.social-link {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-link:hover {
+    color: rgba(190, 190, 190, 0.75);
+}
+#footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.75);
+}
 .main_footer {
-    background-color: rgb(180, 180, 180);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: black;
@@ -89,3 +108,23 @@ div.activated_link {
     position: fixed;
     bottom: 0;*/
 }
+
+
+
+/*Styling buttons... is not working good! better to change them to smth else.*/
+.btn {
+    border-radius: 0;
+}
+.btn-primary {
+    color: #000000;
+    background-color: rgba(153, 148, 76, 0.1);
+    border-color: rgba(153, 148, 76, 0.5);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn:active {
+    color: #000000;
+    border-color: #000000;
+    background-color: rgba(153, 148, 76, 0.2);!important
+}
+/* End Styling buttons.

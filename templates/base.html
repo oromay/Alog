@@ -17,7 +17,14 @@
     <header class="d-flex" style="background-image:url(
     {% block background %}
     {% static "images/backgrounds/borana_backs.jpg" %}
-    {% endblock %});">
+    {% endblock %}); position:relative;">
+
+    {% if user.is_superuser %}
+        <h3 style="position:fixed; right:0;">
+            <a href="/abmin">admin</a>
+        </h3>
+{% endif %}
+
         <div class="container text-center align-self-center">
                     <h1 class="display-4 branding">Голоса Африки</h1>
                     <h1 class="d-sm-block d-none branding subtitle">исследования сообществ по ту сторону Сахары</h1>
@@ -48,8 +55,8 @@
     <div class="card-deck d-flex flex-column-reverse flex-sm-row">
       <div class="card border-0 bg-transparent">
         <div class="card-body">
-          <p class="card-text">Terms of use</p>
-        </div>
+          <p class="card-text">Terms of use  </p>
+          </div>
       </div>
       <div class="card border-0 bg-transparent">
         <div class="card-body">

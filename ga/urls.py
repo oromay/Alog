@@ -22,9 +22,7 @@ from apply.views import UploadView
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', mainpage, name='home'),
-    url(r'^laureates/', laureates, name='laureates'),
-    url(r'^apply/', UploadView.as_view(), name = 'apply'),
-    url(r'^author/(?P<slug>[\w-]+)', UploadView.as_view(), name = 'author'),
+    url(r'^abmin/', admin.site.urls),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^', include('contentmanager.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

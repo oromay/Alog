@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+
 # Register your models here.
 from .models import Elder, Author, Post, New
 
@@ -25,4 +26,4 @@ class NewModelAdmin(admin.ModelAdmin):
 admin.site.register(Elder)
 admin.site.register(Author, AuthorModelAdmin)
 admin.site.register(Post, PostModelAdmin)
-admin.site.register(New, NewModelAdmin)
+admin.site.register(New, NewModelAdmin,)

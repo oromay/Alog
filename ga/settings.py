@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'contentmanager',
     #third party
     'crispy_forms',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +155,13 @@ MEDIA_URL = '/media/'
 #Third party app settings
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+CKEDITOR_UPLOAD_PATH ='uploads/'
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        'allowedContent': True,
+    }
+}
 
 # INSTALLED_APPS += ('lockdown', )
 # MIDDLEWARE += ('lockdown.middleware.LockdownMiddleware', )
